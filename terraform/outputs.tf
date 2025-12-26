@@ -13,3 +13,10 @@ output "vm_subnet_id" {
 output "bastion_subnet_id" {
   value = azurerm_subnet.bastion_subnet.id
 }
+output "vm_private_ip" {
+  value = azurerm_network_interface.vm_nic.private_ip_address
+}
+
+output "bastion_url" {
+  value = "https://portal.azure.com/#blade/HubsExtension/BastionHostBlade/resourceId/${azurerm_bastion_host.bastion.id}"
+}
